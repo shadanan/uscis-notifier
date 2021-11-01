@@ -1,0 +1,13 @@
+name: Execute Daily
+on:
+  schedule:
+    - cron: "0 17 * * *"
+jobs:
+  uscis-check-notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+      - run: python notify.py
