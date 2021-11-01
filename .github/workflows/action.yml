@@ -1,5 +1,6 @@
-name: Execute Daily
+name: Notify daily at 10am PDT
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 17 * * *"
 jobs:
@@ -10,4 +11,5 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: "3.x"
+      - run: pip install -r requirements.txt
       - run: python notify.py
