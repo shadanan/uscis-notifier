@@ -13,3 +13,7 @@ jobs:
           python-version: "3.x"
       - run: pip install -r requirements.txt
       - run: python notify.py
+        env:
+          PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+          PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+          GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
